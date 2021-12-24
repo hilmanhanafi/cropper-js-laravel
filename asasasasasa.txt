@@ -1,0 +1,56 @@
+ // cropper.getCroppedCanvas({
+        //     width: 160,
+        //     height: 160,
+        // }).toBlob(function(blob) {
+        //     url = URL.createObjectURL(blob);
+        //     var reader = new FileReader();
+        //     reader.readAsDataURL(blob); 
+        //     reader.onloadend = function() {
+        //         var base64data = reader.result; 
+                $("#blah").attr('src',isinya);
+        //         $(".asas").val(base64data);
+                $modal.modal('hide');
+        //     }
+        // });
+
+        // codingan decode gambar
+
+          // dd($info);
+        // $folderPath = public_path('images/');
+
+        // $image_parts = explode(";base64,", $request->horee);
+        // $image_parts = explode(";base64,", $request->horee);
+
+
+        // $image_type_aux = explode("image/", $image_parts[0]);
+
+        // $image_type = $image_type_aux[1];
+
+        // $image_base64 = base64_decode($image_parts[1]);
+
+
+        // $imageName = uniqid() . '.png';
+
+        // $imageFullPath = $folderPath . $imageName;
+
+        // file_put_contents($imageFullPath, $image_base64);
+
+        // $saveFile = new Picture;
+        // $saveFile->name = $imageName;
+        // $saveFile->save();
+
+
+
+        // codingan cropper 1
+                        cropper.getCroppedCanvas().toBlob(function(blob) {
+                    url = URL.createObjectURL(blob);
+                    var reader = new FileReader();
+                    reader.readAsDataURL(blob); 
+                    reader.onloadend = function() {
+                         base64data = reader.result; 
+                         $("#blah<?= $i ?>").attr('src', base64data);
+                         $(".asas<?=$i?>").val(base64data);
+                         $('#modal<?=$i?>').modal('hide');
+                        
+                    }
+                });
